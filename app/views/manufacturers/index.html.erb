@@ -1,8 +1,8 @@
-<h1> Cars for Cats </h1>
+<h1> List of Manufacturers </h1>
 
 <ul>
   <% @manufacturers.each do |manufacturer| %>
-    <li><%=  link_to manufacturer.name, manufacturer_path %> -- <%= manufacturer.country %></li>
+    <li><%=  link_to manufacturer.name, manufacturer_path(manufacturer) %> -- <%= manufacturer.country %></li>
   <% end %>
 </ul>
 
