@@ -1,6 +1,8 @@
+
 <h1> Car Lot </h1>
 <p>Thanks for stopping by. View cars by make , make a selection below.</p>
 <p>Looking to add a new car? Select the make here, and then click the "Add Car" link!</p>
+
 <ul>
   <% @manufacturers.each do |manufacturer| %>
     <li><%=  link_to manufacturer.name, manufacturer_path(manufacturer) %> -- <%= manufacturer.country %></li>
