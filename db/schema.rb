@@ -11,19 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005172221) do
+ActiveRecord::Schema.define(version: 20141005222448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "manufacturers", force: true do |t|
-    t.string   "name"
-    t.string   "country"
+  create_table "cars", force: true do |t|
+    t.string   "manufacturer", null: false
+    t.string   "color"
+    t.integer  "year",         null: false
+    t.integer  "milage"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "model"
   end
 
-  create_table "manufacturers_tables", force: true do |t|
+  create_table "manufacturers", force: true do |t|
     t.string   "name"
     t.string   "country"
     t.datetime "created_at"

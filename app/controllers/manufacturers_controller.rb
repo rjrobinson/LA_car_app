@@ -21,6 +21,7 @@ class ManufacturersController < ApplicationController
   end # of create
 
   def show
+    @manufacturer = Manufacturer.find(params[:id])
   end
 
 
