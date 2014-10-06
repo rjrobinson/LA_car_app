@@ -2,6 +2,10 @@
 
 <%= form_for [ @manufacturer, @car ] do |f| %>
   <div>
+    <%= f.label :manufacturer_id %>
+    <%= f.collection_select :manufacturer_id, Manufacturer.all.order(:name), :id, :name, include_blank: true %>
+  </div>
+  <div>
     <%= f.label :model  %>
     <%= f.text_field :model %>
   </div>
@@ -18,7 +22,11 @@
     <%= f.text_field :milage %>
   </div>
   <div>
+    <%= f.label :description  %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
     <%= f.submit 'Add Car' %>
   </div>
-  
+
 <% end %>

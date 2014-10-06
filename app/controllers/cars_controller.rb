@@ -2,7 +2,7 @@ class CarsController < ApplicationController
 
 
   def new
-    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    # @manufacturer = Manufacturer.find(params[:manufacturer_id])
     @car = Car.new
   end
 
@@ -13,12 +13,11 @@ class CarsController < ApplicationController
   end
 
   def create
-    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    # @manufacturer = Manufacturer.find(params[:manufacturer_id])
     @car = Car.new(car_params)
-
     if @car.save
       flash[:notice] = 'Car added!'
-      redirect_to show_manufacturers_path
+      redirect_to root_path
     else
       flash[:notice] = "There was an error. Could not save."
       render :new
@@ -34,7 +33,7 @@ class CarsController < ApplicationController
   private
 
     def car_params
-    params.require(:car).permit( :model, :color, :milage, :year )
+    params.require(:car).permit( :model, :color, :milage, :year, :description, :manufacturer_id )
     end
 
 end

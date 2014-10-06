@@ -13,6 +13,5 @@ FactoryGirl.define do
     year '1980'
     color 'black'
     milage '23989'
-    manufacturer 'Ford Motor Company'
   end
 end

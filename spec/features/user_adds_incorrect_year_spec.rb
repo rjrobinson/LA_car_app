@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-  feature 'Car salesman visits page to add manufacturer', %Q(
+  feature 'Car salesman adds incorrect year', %Q(
 
   As a car salesperson
-  I want to enter a year less then 1920
-  So that I can get an error, because those cars are too old. 
+  I want to enter the wrong year
+  So that I can get an error
 
   ) do
 
@@ -22,10 +22,8 @@ require 'rails_helper'
   click_link 'Add Car'
 
   car = FactoryGirl.build(:car)
-
-  select manufacturer.name, from: 'Manufacturer'
   fill_in 'Model',      with: car.model
-  fill_in 'Year',       with: 1910
+  fill_in 'Year',       with: 1920
   fill_in 'Color',      with: car.color
   fill_in 'Milage',     with: car.milage
 
