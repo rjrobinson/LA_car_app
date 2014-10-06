@@ -1,7 +1,24 @@
 <h1>Add a new car . . .</h1>
 
-<%= form_for @car do |f| %>
-  <%= f.label :manufacturer %>
-  <%= f.text_field :manufacturer %>
-
+<%= form_for [ @manufacturer, @car ] do |f| %>
+  <div>
+    <%= f.label :model  %>
+    <%= f.text_field :model %>
+  </div>
+  <div>
+    <%= f.label :year  %>
+    <%= f.text_field :year %>
+  </div>
+  <div>
+    <%= f.label :color  %>
+    <%= f.text_field :color %>
+  </div>
+  <div>
+    <%= f.label :milage  %>
+    <%= f.text_field :milage %>
+  </div>
+  <div>
+    <%= f.submit 'Add Car' %>
+  </div>
+  
 <% end %>

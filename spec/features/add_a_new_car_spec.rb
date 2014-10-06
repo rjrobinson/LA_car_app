@@ -10,11 +10,22 @@ require 'rails_helper'
 
   scenario 'Car salesman visits add car index' do
 
+  manufacturer = FactoryGirl.build(:manufacturer)
   car  = FactoryGirl.build(:car)
 
-  visit new_car_path
+  visit root_path
 
-  fill_in 'Manufucturer',with: car.manufucturer
+  click_link 'Add new manufacturer'
+
+  fill_in 'Name',         with: manufacturer.name
+  fill_in 'Country',      with: manufacturer.country
+
+  click_button('Add Manufacturer')
+
+  click_link 'Ford'
+
+  click_link 'Add Car'
+
   fill_in 'Model',      with: car.model
   fill_in 'Year',       with: car.year
   fill_in 'Color',      with: car.color
